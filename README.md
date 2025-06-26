@@ -1,59 +1,15 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# Building a Conversational Agent with Context Awareness\n",
-    "\n",
-    "## Overview\n",
-    "We want to create a conversational agent that maintains context across multiple interactions. We'll use a modern AI framework to build an agent capable of engaging in more natural and coherent conversations.\n",
-    "\n",
-    "## Motivation\n",
-    "Many simple chatbots lack the ability to maintain context, leading to disjointed and frustrating user experiences. This project aims to solve that problem by implementing a conversational agent that can remember and refer to previous parts of the conversation, enhancing the overall interaction quality.\n",
-    "\n",
-    "## Key Components\n",
-    "1. **Language Model**: The core AI component that generates responses.\n",
-    "2. **Prompt Template**: Defines the structure of our conversations.\n",
-    "3. **History Manager**: Manages conversation history and context.\n",
-    "4. **Message Store**: Stores the messages for each conversation session.\n",
-    "\n",
-    "## Method Details\n",
-    "\n",
-    "### Setting Up the Environment\n",
-    "Begin by setting up the necessary AI framework and ensuring access to a suitable language model. This forms the foundation of our conversational agent.\n",
-    "\n",
-    "### Creating the Chat History Store\n",
-    "Implement a system to manage multiple conversation sessions. Each session should be uniquely identifiable and associated with its own message history.\n",
-    "\n",
-    "### Defining the Conversation Structure\n",
-    "Create a template that includes:\n",
-    "- A system message defining the AI's role\n",
-    "- A placeholder for conversation history\n",
-    "- The user's input\n",
-    "\n",
-    "This structure guides the AI's responses and maintains consistency throughout the conversation.\n",
-    "\n",
-    "### Building the Conversational Chain\n",
-    "Combine the prompt template with the language model to create a basic conversational chain. Wrap this chain with a history management component that automatically handles the insertion and retrieval of conversation history.\n",
-    "\n",
-    "### Interacting with the Agent\n",
-    "To use the agent, invoke it with a user input and a session identifier. The history manager takes care of retrieving the appropriate conversation history, inserting it into the prompt, and storing new messages after each interaction.\n",
-    "\n",
-    "## Conclusion\n",
-    "This approach to creating a conversational agent offers several advantages:\n",
-    "- **Context Awareness**: The agent can refer to previous parts of the conversation, leading to more natural interactions.\n",
-    "- **Simplicity**: The modular design keeps the implementation straightforward.\n",
-    "- **Flexibility**: It's easy to modify the conversation structure or switch to a different language model.\n",
-    "- **Scalability**: The session-based approach allows for managing multiple independent conversations.\n",
-    "\n",
-    "With this foundation, you can further enhance the agent by:\n",
-    "- Implementing more sophisticated prompt engineering\n",
-    "- Integrating it with external knowledge bases\n",
-    "- Adding specialized capabilities for specific domains\n",
-    "- Incorporating error handling and conversation repair strategies\n",
-    "\n",
-    "By focusing on context management, this conversational agent design significantly improves upon basic chatbot functionality, paving the way for more engaging and helpful AI assistants."
-   ]
-  }
-   
+# 🤖 LLM Conversational Agent with Context Awareness
+
+This project demonstrates how to build a conversational agent using LangChain and OpenAI's language models, enhanced with memory to maintain context over a multi-turn conversation. It uses LangChain’s `RunnableWithMessageHistory` to enable session-specific dialogue continuity.
+
+---
+
+## 🧠 Key Features
+
+- **LLM Integration**: Uses `gpt-4o-mini` from OpenAI via LangChain’s `ChatOpenAI`.
+- **Session Memory**: Retains conversation history using `ChatMessageHistory` per user session.
+- **Contextual Responses**: Each response includes knowledge of prior interactions in the same session.
+- **Dynamic Prompting**: Utilizes `ChatPromptTemplate` and `MessagesPlaceholder` to include history in prompts.
+
+
+
